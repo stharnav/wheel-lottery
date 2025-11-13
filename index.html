@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lottery Wheel Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lottery Wheel Game</h1>
+   <div class="wheel-container">
+    <!-- background -->
+    <img src="images/wheel-bg.png" class="wheel-bg" alt="wheel background">
+
+    <img src="images/wheel-c.png" class="center" alt="center" >
+    
+    <!-- wheel -->
+    <canvas id="wheelCanvas" width="500" height="500"></canvas>
+
+    <!-- pointer -->
+    <img src="images/pointer.png" class="pointer" alt="pointer">
+    </div>
+    <button id="spin">SPIN 🎲</button>
+    <p id="result"></p>
+  </div>
+
+  <div id="resultPopup" class="popup">
+    <div class="popup-content">
+      <h2 id="popupText"></h2>
+      <button id="closePopup">OK ✅</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Winwheel.js/2.7.0/Winwheel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TweenMax/1.20.4/TweenMax.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
