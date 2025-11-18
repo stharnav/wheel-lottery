@@ -38,6 +38,7 @@
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0 0 80px rgba(255,215,0,0.6);
+  overflow: hidden  ;
 }
 
   .prize {          
@@ -77,13 +78,31 @@
 
 .reel {
   width: 300px;       
-  height: 400px;      
-  overflow: hidden;
+  height: 300px;      
+  overflow: visible;   
+  border: 5px solid #333;
+  border-radius: 25px;
+  position: relative;
+}
+
+.reel-area{
+  width: 300px;       
+  height: 600px;      
+  overflow: hidden;   
   border: 5px solid #333;
   border-radius: 25px;
   background: #000;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('images/reel.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
+
 
   .symbols {
     position: absolute;
@@ -93,7 +112,7 @@
 
 
   .symbol {
- height: 400px;           
+  height: 300px;           
   display: flex;           
   justify-content: center;  
   align-items: center;      
@@ -183,7 +202,7 @@ button {
 .video-background {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen */
+  height: 100vh; 
   overflow: hidden;
 }
 
@@ -212,14 +231,12 @@ button {
   position: relative;
   top: 0;
   left: 90;
-  width: 100vw;      /* full screen width */
-  height: 100%;     /* full screen height */
-  object-fit: fill; /* fill screen */
-
-  /* REMOVE BLACK BACKGROUND */
+  width: 100vw;      
+  height: 100%;     
+  object-fit: fill; 
   mix-blend-mode: screen;
 
-  pointer-events: none; /* allow clicking UI below */
+  pointer-events: none; 
   z-index: 9999;
   display: none;
 }

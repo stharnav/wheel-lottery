@@ -46,8 +46,8 @@ function fillReel(reel, reelIndex) {
 
     const img = document.createElement("img");
     img.src = s;
-    img.style.width = '250px';
-    img.style.height = '250px';
+    img.style.width = '200px';
+    img.style.height = '200px';
     img.style.objectFit = 'contain';
     d.appendChild(img);
 
@@ -98,7 +98,7 @@ function spinReel(reel, reelIndex, duration = 4000) {
         const finalDiv = reel.children[index];
         const finalImgSrc = finalDiv.querySelector("img").src;
 
-        reel.innerHTML = "";
+        //reel.innerHTML = "";
         const d = document.createElement("div");
         d.className = "symbol";
         const img = document.createElement("img");
@@ -166,22 +166,20 @@ function checkWin(r) {
         if (e.target === popup) popup.style.display = "none";
         window.location.reload();
     }
-  }, 500); // Delay to allow UI updates
+  }, 500); 
 }
 
-let pendingSpin = null; // stores last number key pressed
+let pendingSpin = null; 
 
 document.addEventListener("keydown", (event) => {
-  // If user presses 1, 2, or 3
   if (["1", "2", "3"].includes(event.key)) {
     pendingSpin = Number(event.key);
     console.log("Selected:", pendingSpin);
   }
 
-  // If user presses Enter, execute spin
   if (event.key === "Enter" && pendingSpin !== null) {
     spinNReels(pendingSpin);
-    pendingSpin = null; // reset after spinning
+    pendingSpin = null; 
   }
 });
 
