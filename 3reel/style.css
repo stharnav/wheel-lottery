@@ -78,8 +78,8 @@
 
 .reel {
   width: 300px;       
-  height: 300px;      
-  overflow: visible;   
+  height: 590px;      
+  overflow: hidden;   
   border: 5px solid #333;
   border-radius: 25px;
   position: relative;
@@ -95,7 +95,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background-image: url('images/reel.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,7 +112,7 @@
 
 
   .symbol {
-  height: 300px;           
+  height: 210px;           
   display: flex;           
   justify-content: center;  
   align-items: center;      

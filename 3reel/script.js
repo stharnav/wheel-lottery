@@ -46,8 +46,8 @@ function fillReel(reel, reelIndex) {
 
     const img = document.createElement("img");
     img.src = s;
-    img.style.width = '200px';
-    img.style.height = '200px';
+    img.style.width = '150px';
+    img.style.height = '150px';
     img.style.objectFit = 'contain';
     d.appendChild(img);
 
@@ -61,7 +61,7 @@ reels.forEach((reel, index) => fillReel(reel, index));
 reels.forEach(fillReel);
 
 function spinReel(reel, reelIndex, duration = 4000) {
-  const symbolHeight = 300; 
+  const symbolHeight = 200; 
   const totalSymbols = reel.children.length;
   const fullHeight = symbolHeight * totalSymbols;
   
@@ -95,23 +95,16 @@ function spinReel(reel, reelIndex, duration = 4000) {
       } else {
 
         const index = Math.floor((move % fullHeight) / symbolHeight);
-        const finalDiv = reel.children[index];
-        const finalImgSrc = finalDiv.querySelector("img").src;
 
-        //reel.innerHTML = "";
-        const d = document.createElement("div");
-        d.className = "symbol";
-        const img = document.createElement("img");
-        img.src = finalImgSrc;
-        img.style.width = '300px';
-        img.style.height = '300px';
-        img.style.objectFit = 'contain';
-        d.appendChild(img);
-        reel.appendChild(d);
+        const bottomIndex = (index + 1) % totalSymbols; 
+
+        const finalImgSrc = reel.children[bottomIndex].querySelector("img").src;
+
+        reel.style.top = `-${index * symbolHeight}px`;
 
         clone.remove();
-        reel.style.top = "0px";
-        //parent.classList.remove("glow");
+        parent.classList.remove("glow");
+
         resolve(finalImgSrc); 
       }
     }
